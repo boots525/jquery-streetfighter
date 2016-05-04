@@ -13,19 +13,67 @@ body {
 	z-index: 1;
 }
 
+.logo {
+		background-image: url(http://vignette2.wikia.nocookie.net/streetfighter/images/f/f6/SF_Logo.png/revision/latest?cb=20130310140822);
+		width: 881px; 
+		height: 440px;
+		background-size: contain;
+		display: block;
+		float: left;
+		position: absolute;
+		z-index: 10;
+		top: 65px; 
+		left: 400px;
+
+}
+
+h1 {
+	font:30px;
+}
+
+h1, h3 {
+	font-family: 'Architects Daughter', cursive; 
+	text-transform: uppercase;
+	color: red;
+	text-align: center;
+	padding: 50px;
+	letter-spacing: 3px;
+}
+
+.instructions {
+	background-color: rgba(18,17,17,0.52);
+	width: 400px;
+	height: 375px;
+	border-radius: 25px;
+	padding-top:25px;
+	left: 600px;
+	float: right;
+	position: absolute;
+
+}
 .ryu {
 	float: left;
 	width: 659px;
 	height: 494px;
 }
 
-.ryu-ready, .ryu-still, .ryu-throwing {
+.ryu-ready, .ryu-still, .ryu-throwing, .ryu-cool {
 	width: 659px;
 	height: 494px;
 
 }
 
-.ryu-ready, .ryu-throwing {
+
+/*.hulk-ryu { 
+	filter: hue-rotate(90deg);
+	background-image: url('../images/ryu-ready-position.gif');
+	float: right;
+	right: 120px;
+	height: 494px; 
+	width: 659px;
+}*/
+
+.ryu-ready, .ryu-throwing, .ryu-cool {
 	display: none;
 }
 .ryu-ready {
@@ -40,7 +88,7 @@ body {
   background-image: url('../images/ryu-throwing-hadouken.png');
 }
 
-.hadouken, .ryu-ready, .ryu-still, .ryu-throwing {
+.hadouken, .ryu-ready, .ryu-still, .ryu-throwing .ryu-cool, .hulk-ryu{
 	background-repeat: no-repeat;
 }
 
@@ -55,4 +103,18 @@ body {
 	float: left;
 	z-index: 10;
 
+}
+
+.ryu-cool {
+	background-image: url('../images/ryu-cool.gif');
+}
+
+.flip-it {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -ms-transform: scaleX(-1);
+    transform: scaleX(-1);
+    -ms-filter: "FlipH";
+    filter: FlipH;
 }
