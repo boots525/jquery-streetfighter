@@ -7,6 +7,7 @@ $(document).ready(function(){
 		$('.ryu-ready').show();
 		$('.logo').hide();
 		$('.instructions').show();
+		$('.ryu-cool').hide();
 		
 	})
 	.mouseleave(function() {
@@ -52,6 +53,7 @@ $(document).keydown(function(e){
 $(document).keyup(function(e){
 	if (e.which === 88) {
 		$('.ryu-cool').hide;
+		$('.ryu-ready').hide;
 		$('.ryu-still').show;
 	}
 });
