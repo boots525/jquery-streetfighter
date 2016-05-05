@@ -1,28 +1,30 @@
 $(document).ready(function(){
 	playThemeSong();
-	$('.instructions').hide();
-
-	$('.ryu').mouseenter(function(){
+		$('.instructions').hide();
+		$('.ryu').mouseenter(function(){
 		$('.ryu-still').hide();
 		$('.ryu-ready').show();
+		$('.hulk-ryu-ready').show();
+		$('.hulk-ryu-still').hide();
 		$('.logo').hide();
 		$('.instructions').show();
 		$('.ryu-cool').hide();
 		
 	})
 	.mouseleave(function() {
-		$('playThemeSong').stop();
 		$('instructions').hide();
 		$('.ryu-ready').hide();
+		$('.hulk-ryu-ready').hide
 		$('.ryu-still').show();
+		$('.hulk-ryu-still').show();
 		$('.logo').show();
 	})
 	.mousedown(function() {
 		playHadouken();
-		$('playThemeSong').stop();
-		$('playTrue').stop();
 		$('.instructions').hide()
 		$('.ryu-ready').hide();
+		$('.hulk-ryu-ready').hide();
+		$('.hulk-ryu-throwing').show();
 		$('.ryu-throwing').show();
 		$('.hadouken').finish().show().animate(
 			{'left': '1020px'},
@@ -32,29 +34,46 @@ $(document).ready(function(){
 				$(this).css('left', '520px');
 			}
 			); 
+		$('.reverse-hadouken').finish().show().animate(
+		{'right': '1020px'},
+		500,
+		function() {
+			$(this).hide();
+			$(this).css('right', '320px');
+		}
+		);
 	})
 	.mouseup(function() {
-		$('.ryu-throwing').hide();
+		$('.ryu-throwing').hide();;
+		$('.hulk-ryu-throwing').hide();
+		$('.hulk-ryu-ready').show();
 		$('.ryu-ready').show();
 	})
-//animate hadouken to right of screen
 });
 
 $(document).keydown(function(e){
 		if (e.which === 88) {
-			playTrue();
-			$('#themesong')[0].pause();
-			$('#true')[0].pause();
 			$('.ryu-ready').hide();
 			$('.ryu-still').hide();
 			$('.ryu-cool').show();
+		}
+		if (e.which === 90) {
+			$('.hulk-ryu-cool').show();
+			$('.hulk-ryu-ready').hide();
+			$('.hulk-ryu-still').hide();
+
 		}
 	});
 $(document).keyup(function(e){
 	if (e.which === 88) {
 		$('.ryu-cool').hide;
 		$('.ryu-ready').hide;
-		$('.ryu-still').show;
+		$('.ryu-still').show();	
+	}
+	if (e.which === 90) {	
+		$('.hulk-ryu-cool').hide();
+		$('.hulk-ryu-ready').hide();
+		$('.hulk-ryu-still').show();
 	}
 });
 
@@ -70,11 +89,3 @@ function playThemeSong () {
 	$('#themesong')[0].load();
 	$('#themesong')[0].play();
 }
-
-function playTrue () {
-	$('#true')[0].volume = 0.5;
-	$('#true')[0].load();
-	$('#true')[0].play();
-}
-
-

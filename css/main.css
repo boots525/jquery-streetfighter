@@ -11,10 +11,12 @@ body {
 	height: 500px;
 	position: relative;
 	z-index: 1;
+	overflow: hidden;
+
 }
 
 .logo {
-		background-image: url(http://vignette2.wikia.nocookie.net/streetfighter/images/f/f6/SF_Logo.png/revision/latest?cb=20130310140822);
+		background-image: url('../images/sflogo.png');
 		width: 881px; 
 		height: 440px;
 		background-size: contain;
@@ -34,9 +36,9 @@ h1 {
 h1, h3 {
 	font-family: 'Architects Daughter', cursive; 
 	text-transform: uppercase;
-	color: red;
+	color: white;
 	text-align: center;
-	padding: 50px;
+	padding: 20px;
 	letter-spacing: 3px;
 }
 
@@ -45,7 +47,7 @@ h1, h3 {
 	width: 400px;
 	height: 375px;
 	border-radius: 25px;
-	padding-top:25px;
+	padding:35px;
 	left: 600px;
 	float: right;
 	position: absolute;
@@ -55,7 +57,9 @@ h1, h3 {
 	float: left;
 	width: 659px;
 	height: 494px;
+
 }
+
 
 .ryu-ready, .ryu-still, .ryu-throwing, .ryu-cool {
 	width: 659px;
@@ -63,28 +67,18 @@ h1, h3 {
 
 }
 
-
-/*.hulk-ryu { 
-	filter: hue-rotate(90deg);
-	background-image: url('../images/ryu-ready-position.gif');
-	float: right;
-	right: 120px;
-	height: 494px; 
-	width: 659px;
-}*/
-
-.ryu-ready, .ryu-throwing, .ryu-cool {
+.ryu-ready, .ryu-throwing, .ryu-cool, , .hulk-ryu-still, .hulk-ryu-cool, .hulk-ryu-throwing, .hulk-ryu-ready {
 	display: none;
 }
-.ryu-ready {
+.ryu-ready, .hulk-ryu-ready {
   background-image: url('../images/ryu-ready-position.gif');
 }
 
-.ryu-still {
+.ryu-still, .hulk-ryu-still {
   background-image: url('../images/ryu-standing-still.png');
 }
 
-.ryu-throwing {
+.ryu-throwing, .hulk-ryu-throwing {
   background-image: url('../images/ryu-throwing-hadouken.png');
 }
 
@@ -92,7 +86,7 @@ h1, h3 {
 	background-repeat: no-repeat;
 }
 
-.hadouken {
+.hadouken  {
 	background-image: url('../images/hadouken.gif');
 	width: 156px;
 	height: 90px;
@@ -105,16 +99,32 @@ h1, h3 {
 
 }
 
-.ryu-cool {
+.reverse-hadouken {
+	background-image: url('../images/hadouken.gif');
+	width: 156px;
+	height: 90px;
+	display: none;
+	position: absolute;
+	transform: scaleX(-1);
+	top:167px;
+	right: 320px;
+	float: right;
+	z-index: 10;
+
+}
+
+.ryu-cool, .hulk-ryu-cool {
 	background-image: url('../images/ryu-cool.gif');
 }
 
-.flip-it {
-    -moz-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    -ms-transform: scaleX(-1);
+#flip-it, .hulk-ryu, .hulk-ryu-still, .hulk-ryu-cool, .hulk-ryu-throwing, .hulk-ryu-ready{
     transform: scaleX(-1);
-    -ms-filter: "FlipH";
-    filter: FlipH;
+    width: 659px;
+    height: 494px;
+	float: right;
+
 }
+
+.hulk-ryu, .hulk-ryu-still, .hulk-ryu-cool, .hulk-ryu-throwing, .hulk-ryu-ready{
+	-webkit-filter: hue-rotate(90deg);
+}	
